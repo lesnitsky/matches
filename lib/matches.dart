@@ -1,4 +1,4 @@
-abstract class Result<T> {
+sealed class Result<T> {
   const Result();
 
   Loading<T> loading() => this as Loading<T>;
@@ -29,7 +29,7 @@ class Success<T> extends Result<T> {
   const Success(this.value);
 }
 
-abstract class Ordering<T> {
+sealed class Ordering<T> {
   const Ordering();
 }
 
@@ -117,7 +117,7 @@ extension DateTimeOrdering on DateTime {
   }
 }
 
-abstract class Maybe<T> {
+sealed class Maybe<T> {
   const Maybe();
 
   Just<T> just() => this as Just<T>;
@@ -133,7 +133,7 @@ class Nothing<T> extends Maybe<T> {
   const Nothing();
 }
 
-abstract class Either<T, K> {
+sealed class Either<T, K> {
   const Either();
 
   Left<T> left() => this as Left<T>;
@@ -152,7 +152,7 @@ class Right<R> extends Either {
   const Right(this.value);
 }
 
-abstract class These<T, K> {
+sealed class These<T, K> {
   const These();
 
   This<T> getThis() => this as This<T>;

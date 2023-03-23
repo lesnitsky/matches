@@ -1,7 +1,6 @@
 # Matches
 
-A Future-proof package with utility classes that are useful already,
-but will become even more useful when Dart 3 arrives.
+A library of utility classses that are useful for pattern matching.
 
 [![GitHub stars](https://img.shields.io/github/stars/lesnitsky/matches.svg?style=social&hash=20230321)](https://github.com/lesnitsky/matches)
 [![Twitter Follow](https://img.shields.io/twitter/follow/lesnitsky_dev.svg?label=Follow%20me&style=social)](https://twitter.com/intent/follow?user_id=2615671640)
@@ -30,25 +29,7 @@ result = Loading<int>();
 
 await Future.delayed(Duration(seconds: 1));
 result = Success(42)
-```
 
-Dart 2 usage
-
-```dart
-if (result is Loading) {
-    return LinearProgressIndicator(value: result.loading().progress);
-} else if (result is Success) {
-    return Text('The number is ${result.success().value}')
-} else if (result is Failure) {
-    return Text('Error: ${result.failure().exception}')
-} else {
-    return SizedBox();
-}
-```
-
-Dart 3 usage
-
-```dart
 final child = switch (result) {
   Success(value: var v) => Text('The number is $v'),
   Loading(progress: var p) => LinearProgressIndicator(value: p),
@@ -58,9 +39,7 @@ final child = switch (result) {
 
 ```
 
-### ComparisonResult
-
-Dart 3 usage
+### Ordering
 
 ```dart
 final random = Random();
@@ -81,21 +60,6 @@ print(msg);
 
 ### Maybe
 
-Dart 2 usage
-
-```dart
-final Maybe<int> a = Just(42);
-final Maybe<int> b = Nothing();
-
-if (a is Just) {
-  print(a.just().value);
-} else {
-  print('nothing')
-}
-```
-
-Dart 3 usage
-
 ```dart
 switch (a) {
   case Just(value: final v): print(v);
@@ -105,21 +69,6 @@ switch (a) {
 
 ### Either
 
-Dart 2 usage
-
-```dart
-final Either<int, String> a = Left(42);
-final Either<int, String> b = Right('42');
-
-if (a is Left) {
-  print(a.left().value);
-} else {
-  print(a.right().value);
-}
-```
-
-Dart 3 usage
-
 ```dart
 switch (a) {
   case Left(value: final v): print(v);
@@ -128,8 +77,6 @@ switch (a) {
 ```
 
 ### These
-
-Dart 3 usage
 
 ```dart
 switch (user) {

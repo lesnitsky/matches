@@ -13,6 +13,11 @@
 
 include: package:lints/recommended.yaml
 
+analyzer:
+  enable-experiment:
+    - patterns
+    - sealed-class
+    - records
 # Uncomment the following section to specify additional rules.
 
 # linter:
