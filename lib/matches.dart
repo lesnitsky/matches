@@ -1,9 +1,5 @@
 sealed class Result<T> {
   const Result();
-
-  Loading<T> loading() => this as Loading<T>;
-  Failure<T> failure() => this as Failure<T>;
-  Success<T> success() => this as Success<T>;
 }
 
 class Pending<T> extends Result<T> {
@@ -119,13 +115,10 @@ extension DateTimeOrdering on DateTime {
 
 sealed class Maybe<T> {
   const Maybe();
-
-  Just<T> just() => this as Just<T>;
 }
 
 class Just<T> extends Maybe<T> {
   final T value;
-
   const Just(this.value);
 }
 
@@ -135,38 +128,29 @@ class Nothing<T> extends Maybe<T> {
 
 sealed class Either<T, K> {
   const Either();
-
-  Left<T> left() => this as Left<T>;
-  Right<K> right() => this as Right<K>;
 }
 
-class Left<L> extends Either {
+class Left<L, R> extends Either<L, R> {
   final L value;
-
   const Left(this.value);
 }
 
-class Right<R> extends Either {
+class Right<R, L> extends Either<L, R> {
   final R value;
-
   const Right(this.value);
 }
 
 sealed class These<T, K> {
   const These();
-
-  This<T> getThis() => this as This<T>;
-  That<K> getThat() => this as That<K>;
-  Both<T, K> getBoth() => this as Both<T, K>;
 }
 
-class This<T> extends These {
+class This<T, K> extends These<T, K> {
   final T value;
 
   const This(this.value);
 }
 
-class That<K> extends These {
+class That<K, T> extends These<T, K> {
   final K value;
 
   const That(this.value);

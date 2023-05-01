@@ -1,9 +1,19 @@
 # Matches
 
-A library of utility classses that are useful for pattern matching.
+Collection of useful patterns for Dart
 
 [![GitHub stars](https://img.shields.io/github/stars/lesnitsky/matches.svg?style=social&hash=20230321)](https://github.com/lesnitsky/matches)
 [![Twitter Follow](https://img.shields.io/twitter/follow/lesnitsky_dev.svg?label=Follow%20me&style=social)](https://twitter.com/intent/follow?user_id=2615671640)
+
+## ToC
+
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Result](#result)
+  - [Ordering](#ordering)
+  - [Maybe](#maybe)
+  - [Either](#either)
+  - [These](#these)
 
 ## Installation
 

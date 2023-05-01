@@ -1,3 +1,7 @@
+## 1.0.0-pre.1
+
+- pre-release for Dart 3
+
 ## 0.1.4+8
 
 - `These` added

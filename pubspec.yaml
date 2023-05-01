@@ -1,6 +1,6 @@
 name: matches
-description: Utility classes that are useful already, but will become even more useful when Dart 3 arrives
-version: 1.0.0-dev.0
+description: Collection of useful patterns for Dart
+version: 1.0.0-pre.1
 repository: https://github.com/lesnitsky/matches
 
 environment:
